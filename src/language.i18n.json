@@ -1,0 +1,49 @@
+{
+	"@metadata": {
+		"version": 1,
+		"locales": [
+			{
+				"default": true,
+				"id": "en",
+				"label": "English"
+			},
+			{
+				"default": false,
+				"id": "fr",
+				"label": "Français"
+			},
+			{
+				"default": false,
+				"id": "cn",
+				"label": "中文"
+			}
+		]
+	},
+	"en": {
+		"label__copyright": "Powered by Serko",
+		"label__welcome": "Welcome to Serko's online booking and expense tool",
+		"label__heading_signin": "Sign In",
+		"label__heading_private": "Serko - Secured Page",
+		"label__signin": "Sign In",
+		"label__no_account": "Don't have an account?",
+		"label__register": "Register"
+	},
+	"fr": {
+		"label__copyright": "Propulsé par Serko",
+		"label__welcome": "Bienvenue dans l'outil de réservation et de dépenses en ligne de Serko",
+		"label__heading_signin": "S'identifier",
+		"label__heading_private": "Serko - Page sécurisée",
+		"label__signin": "S'identifier",
+		"label__no_account": "Vous n'avez pas de compte?",
+		"label__register": "Registre"
+	},
+	"cn": {
+		"label__copyright": "由Serko提供技术支持",
+		"label__welcome": "欢迎来到Serko的在线预订和费用工具",
+		"label__heading_signin": "登录",
+		"label__heading_private": "Serko  - 安全页面",
+		"label__signin": "登录",
+		"label__no_account": "没有帐户？",
+		"label__register": "寄存器"
+	}
+}

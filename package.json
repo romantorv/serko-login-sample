@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/styles": "^4.0.2",
+    "axios": "^0.19.0",
+    "clsx": "^1.0.4",
+    "debug": "^4.1.1",
+    "mobx": "^4.10.0",
+    "mobx-react": "^6.0.3",
+    "mobx-state-tree": "^3.14.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-staging": "sh -ac '. .staging.env; react-scripts build'",
+    "build-production": "sh -ac '. .production.env; react-scripts build'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
