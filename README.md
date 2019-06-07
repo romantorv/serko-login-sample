@@ -1,6 +1,6 @@
 # Serko's sample login screen
 
-This is the app architecture that present the preparation when we start a project. This information will help all developers understand the overall concept and start building a highly scalable product.
+This is the app architecture that presents the preparation once we start a project. This information will help developers understand the overall concept and start building a highly scalable product.
 
 ## Index
 
@@ -18,22 +18,22 @@ For application structure, we split the app stores into 2 groups:
 - RootStore
 - Module stores
 
-### What is RootStore:
-There is only one RootStore at the root level of the application or independent modules
-snapshot of web token at current time, this store contains:
+### What is Root store:
+There is only one Root store at the root level of the application, this store contains:
 - The snapshot of application settings / information at the current time
+- The web token, authentication information
 - The current locale / language store
 - Common contents (e.g: General User information: Name, Email, ContactNo, etc…)
 
 ### What is Module stores:
 
-The store belongs to a modules inside an application, if the module developed in different package outside the application, it becomes the "Root store" in that instance.
+The store belongs to a modules inside an application; if that module developed in different package outside the application, it becomes the "Root store" in that instance.
  
-The module store is dedicated to its container and have no directly relationship to the RootStore, it can communicate by sending the information via store methods inside the template. Some sample of the Module stores:
+The module store is dedicated to its container and have no direct relationship to the Root store, it can communicate by sending the information via store methods inside the template. Some sample of the Module stores:
 - Private pages (for registered users only)
 - Profile manage (updating profile information and passwords)
 - Purchased order
-- Etc…
+- etc…
 
 ## Document Structure
 
@@ -44,25 +44,25 @@ A boilerplate structure for one application
 
 
 ### app.config and app.routes
-The app.config.js contains site settings/configuration, constant name at the app level
-The app.routes.js contains site router configuration for lazy loaded modules / components
+- The `app.config.js` contains site settings/configuration, constant name at the app level
+- The `app.routes.js` contains site router configuration for lazy loaded modules / components
 
 ### module.config and module.rotes
-They are exactly the config and router settings but applicable only for module usage
+They are exactly the configuration and router settings inside a module.
 
 ### App /index.js and Module /index.js
-The index.js acts like the entry point for the app or module, it’s useful when we want to integrate and use the module without further settings.
+The `index.js` acts like the entry point for the app or module, it’s useful when we want to integrate and use the module without further settings.
 
 ### .JS vs .JSX
 We need to define the content type from its name:
-- by using JS, this file contains the business logics and integration
+- by using JS, this file contains the logics and integration only;
 - by using JSX, we have templating inside and the return is mostly a React Component type.
 
 ## Naming convention for stores / models
 When working with stores and models, we should have a standard communication for properties, methods and computed attributes. Following the guideline will help we talk less for the usage / purpose.
 
 ### Model:
-This is the lowest unit of a store, a good model design should not contain other model. A Model can have the many computed attributes and actions that related to itself. A model code is likely:
+This is the lowest unit of a store, a good model design should not contain other model. A Model can have many computed attributes and actions that related to itself. A model code is likely:
 
 ```javascript
 import { types } from 'mobx-state-tree';
@@ -84,8 +84,8 @@ export default LocaleModel;
 ```
 
 ### Store:
-Contains many model and complex logic, this will perform all actions that designed for the components / functions
-A Sample Store
+Contains many models and complex logic, this will perform all actions that designed for the components / functions
+- A Sample Store
 
 ```javascript
 import { types, flow } from 'mobx-state-tree';
@@ -116,9 +116,9 @@ export default LocaleStore;
 ```
 
 ### Common Actions:
-A collection of same configuration actions to use with the store. The actions are wrapped with the axios headers configuration, so that we don’t need to declare at each store
+A collection of the same configuration actions to use with the store. The actions are wrapped with the axios headers configuration, so that we don’t need to declare at each store
 
-Can read the action here: ./stores/actions.js
+Can read the action here: `./stores/actions.js`
 
 ### Naming convention:
 Store attributes:
@@ -131,7 +131,7 @@ Computed attributes:
 
 ### Computed methods:
 - __get<name of the object>: using to retrieve the desired content from the current snapshot, the logic inside this method will not change anything to the store attributes.
--- E.g: __getLabelById(id)
+- e.g: __getLabelById(id)
 
 ## Authentication configuration
 
