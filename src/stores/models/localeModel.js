@@ -9,8 +9,7 @@ const LocaleModel = types
 	})
 	.views( self => ({
 		__getValue(itemId){
-			const found = Object.keys( self.items ).find( itemKey => itemKey === itemId );
-			return found ? self.items[found] : null;
+			return self.items[itemId] ? self.items[itemId] : null;
 		}
 	}));
 
