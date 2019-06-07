@@ -39,8 +39,9 @@ The module store is dedicated to its container and have no directly relationship
 
 We start build the big application from small modules and smaller components, by designing as below structure, we can make it scalable, easily for parallelly development and testing:
 
-
+![A boilerplate structure for one application](http://kreativefactory.com/App_boilerplate.jpeg)
 A boilerplate structure for one application
+
 
 ### app.config and app.routes
 The app.config.js contains site settings/configuration, constant name at the app level
